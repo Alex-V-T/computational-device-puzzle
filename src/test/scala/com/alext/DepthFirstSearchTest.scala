@@ -3,7 +3,6 @@ package com.alext
 import org.junit.{Test, _}
 import Assert._
 
-@Test
 class DepthFirstSearchTest {
   @Test
   def searchTest_nEquals12_returnsExpected() = {

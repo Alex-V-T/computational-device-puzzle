@@ -28,14 +28,27 @@ object DepthFirstSearch {
     }
   }
 
-  def main(args: Array[String]): Unit = {
+  def printTime(actionToMeasure: Unit => Any): Unit = {
     val startTime = System.currentTimeMillis()
-    val initial = State(1, 1, null)
-    for (i <- 3 to 1000) {
-      val result = search(initial, i, 0, Result(false, 0, null))
-      println(i, result.iterations, Math.min(result.finalState.x, result.finalState.y))
-    }
-    val endTime = System.currentTimeMillis()
-    println("Time=" + (endTime - startTime))
+    actionToMeasure.apply()
+    println("Time=" + (System.currentTimeMillis() - startTime) + "ms")
+  }
+
+  def main(args: Array[String]): Unit = {
+    println("Solving series of small problems")
+    printTime((Unit)=> {
+      val initial = State(1, 1, null)
+      for (i <- 3 to 1000) {
+        val result = search(i)
+        println(i, result.iterations)
+      }
+    })
+
+    println("Solving single big problem")
+    printTime((Unit) => {
+      val n = 1000234
+      val result = search(n)
+      println(n, result.iterations)
+    })
   }
 }
