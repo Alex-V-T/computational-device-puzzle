@@ -37,7 +37,6 @@ object DepthFirstSearch {
   def main(args: Array[String]): Unit = {
     println("Solving series of small problems")
     printTime((Unit)=> {
-      val initial = State(1, 1, null)
       for (i <- 3 to 1000) {
         val result = search(i)
         println(i, result.iterations)
