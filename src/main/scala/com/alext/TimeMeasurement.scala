@@ -1,9 +1,9 @@
 package com.alext
 
 object TimeMeasurement {
-  def printTime(actionToMeasure: Unit => Any): Unit = {
+  def printTime(actionToMeasure: Unit => Any) = {
     val startTime = System.currentTimeMillis()
     actionToMeasure.apply()
-    println("Time=" + (System.currentTimeMillis() - startTime) + "ms")
+    println(s"Time=${(System.currentTimeMillis() - startTime)}ms")
   }
 }
