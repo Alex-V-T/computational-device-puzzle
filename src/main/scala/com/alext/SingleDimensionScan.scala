@@ -1,5 +1,7 @@
 package com.alext
 
+import com.alext.TimeMeasurement._
+
 /**
   * Searches for optimal solution traversing second registry and iterating backwards
   * Complexity is O(N^2)
@@ -62,7 +64,7 @@ object SingleDimensionScan {
 
   def main(args: Array[String]): Unit = {
     println("Solving series of small problems")
-    TimeMeasurement.printTime((Unit)=> {
+    printTime((Unit) => {
       for (i <- 3 to 1000) {
         val result = search(i)
         println(i, result.iterations)
@@ -70,7 +72,7 @@ object SingleDimensionScan {
     })
 
     println("Solving single big problem")
-    TimeMeasurement.printTime((Unit) => {
+    printTime((Unit) => {
       val n = 100023400
       val result = search(n)
       println(n, result.iterations)
