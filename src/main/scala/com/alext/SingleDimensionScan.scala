@@ -10,7 +10,7 @@ object SingleDimensionScan {
   def search(n: Int): Result = {
     var bestResult = Result(false, n, null)
 
-    for (i <- n / 2 to n - 1) {
+    for (i <- n / 2 until n) {
       val result = iterateBackwards(n, i, bestResult.iterations)
       if (result.isSolved && (bestResult == null || result.iterations < bestResult.iterations))
         bestResult = result
