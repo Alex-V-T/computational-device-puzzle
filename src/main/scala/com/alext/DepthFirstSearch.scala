@@ -20,13 +20,13 @@ object DepthFirstSearch {
       return Result(true, iteration, state)
 
     if (iteration % 2 == 0) {
-      val resultOfX = search(state.OperationX(), goal, iteration + 1, bestResult)
+      val resultOfX = search(state.operationX, goal, iteration + 1, bestResult)
 
-      search(state.OperationY(), goal, iteration + 1, resultOfX)
+      search(state.operationY, goal, iteration + 1, resultOfX)
     } else {
-      val resultOfY = search(state.OperationY(), goal, iteration + 1, bestResult)
+      val resultOfY = search(state.operationY, goal, iteration + 1, bestResult)
 
-      search(state.OperationX(), goal, iteration + 1, resultOfY)
+      search(state.operationX, goal, iteration + 1, resultOfY)
     }
   }
 

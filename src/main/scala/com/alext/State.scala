@@ -1,11 +1,11 @@
 package com.alext
 
 case class State(x: Int, y: Int, parent: State) {
-  def OperationX(): State = {
+  def operationX(): State = {
     State(x + y, y, this)
   }
 
-  def OperationY(): State = {
+  def operationY(): State = {
     State(x, y + x, this)
   }
 
