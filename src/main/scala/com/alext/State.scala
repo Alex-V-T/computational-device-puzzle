@@ -12,9 +12,9 @@ case class State(x: Int, y: Int, parent: State) {
   def depth(): Int = {
     var counter = 0
     var current = this
-    while (current.parent != null){
+    while (current.parent != null) {
       current = current.parent
-      counter+=1
+      counter += 1
     }
 
     counter
