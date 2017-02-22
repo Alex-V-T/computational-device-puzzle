@@ -7,7 +7,6 @@ class TwoAlgorithmsComparisionTest {
 
   @Test
   def compareTest_DepthFirstSearch_and_SingleDimensionScan() = {
-    val initial = State(1, 1, null)
     for (i <- 3 to 1000) {
       val result1 = DepthFirstSearch.search(i)
       val result2 = SingleDimensionScan.search(i)
