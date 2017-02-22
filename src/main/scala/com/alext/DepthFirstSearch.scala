@@ -12,7 +12,7 @@ object DepthFirstSearch {
     search(State(1, 1, null), n, 0, Result(false, 0, null))
   }
 
-  def search(state: State, goal: Int, iteration: Int, bestResult: Result): Result = {
+  private def search(state: State, goal: Int, iteration: Int, bestResult: Result): Result = {
     if (state.x > goal || state.y > goal || (bestResult.isSolved && iteration >= bestResult.iterations))
       return bestResult
 

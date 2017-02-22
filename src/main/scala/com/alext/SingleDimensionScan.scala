@@ -25,7 +25,7 @@ object SingleDimensionScan {
     buildResult(bestResult)
   }
 
-  def iterateBackwards(initialX: Int, initialY: Int, iterationsCap: Int): Result = {
+  private[alext] def iterateBackwards(initialX: Int, initialY: Int, iterationsCap: Int): Result = {
     var j = 0
     var currentX = initialX
     var currentY = initialY
@@ -45,12 +45,12 @@ object SingleDimensionScan {
     Result(false, j, null)
   }
 
-  def buildResult(partialResult: Result): Result = {
+  private def buildResult(partialResult: Result): Result = {
     Result(partialResult.isSolved, partialResult.iterations,
       buildState(partialResult.finalState.x, partialResult.finalState.y))
   }
 
-  def buildState(currentX: Int, currentY: Int): State = {
+  private def buildState(currentX: Int, currentY: Int): State = {
     if (currentX == 1 && currentY == 1) {
       State(1, 1, null)
     } else {
